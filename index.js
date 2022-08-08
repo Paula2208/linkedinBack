@@ -23,4 +23,7 @@ app.use('/v1', authRouter);
 app.use('/v1', postRouter);
 app.use('/v1', userRouter);
 
+app.get('/', (req, res, next) => {
+    res.send('<h1>Welcome to Linkedin Paula Back!</h1>')})
+
 module.exports = app;

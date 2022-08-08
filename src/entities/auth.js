@@ -1,5 +1,5 @@
 
-const login = (req, res, next) => {
+const logIn = (req, res, next) => {
     const username = req.body.username || '';
     const password = req.body.password || '';
 
@@ -11,6 +11,6 @@ const registerUser = (req, res, next) => {
 }
 
 module.exports= {
-    login,
+    logIn,
     registerUser
 };
