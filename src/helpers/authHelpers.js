@@ -10,7 +10,7 @@ const comparePassword = (password, hashed) => {
 }
     
 const existUser = (id) => new Promise((resolve, reject) => {
-    db.user.findByPk(id)
+    db.users.findByPk(id)
         .then((result) => {
             if(result){
                 resolve(true)

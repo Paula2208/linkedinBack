@@ -1,12 +1,12 @@
-const {encryptPassword, comparePassword} = require('../helpers/authHelpers');
-const {isRegisterUser, existUser} = require('../guards/auth');
+const {encryptPassword, comparePassword, existUser} = require('../helpers/authHelpers');
+const {isRegisterUser} = require('../guards/auth');
 const db = require('../../models/index.js');
 
 const logIn = (req, res, next) => {
     const username = req.body.username || '';
     const password = req.body.password || '';
 
-    db.user.findByPk(username)
+    db.users.findByPk(username)
         .then((result) => {
             if(result){
                 if(comparePassword(password, result.password)){
@@ -45,7 +45,7 @@ const registerUser = async(req, res, next) => {
     const noAvailable = await existUser(user.username);
 
     if(!noAvailable){
-        db.user.create(user)
+        db.users.create(user)
             .then(u => {
                 res.status(201).send();
             })

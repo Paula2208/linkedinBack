@@ -3,7 +3,7 @@ const {isCreatePost} = require('../guards/posts');
 const timestamp = require('time-stamp');
 
 const getPosts = (req, res, next) => {
-    db.post.findAll()
+    db.posts.findAll()
         .then(u => {
             res.status(200).json(u).send();
         })
@@ -24,7 +24,7 @@ const createPost = (req, res, next) => {
         return;
     }
 
-    db.post.create(post)
+    db.posts.create(post)
         .then(u => {
             res.status(201).send();
         })
@@ -37,7 +37,7 @@ const createPost = (req, res, next) => {
 const deletePost = (req, res, next) => {
     const post_id = req.params.postId || '';
 
-    db.post.destroy({
+    db.posts.destroy({
         where:{
             post_id: post_id
         }
