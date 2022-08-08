@@ -1,24 +1,16 @@
 {
   "development": {
-    "username": "root",
+    "username": "postgres",
     "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "operatorsAliases": false
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "database": "linkedin_development",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
+    "username": "postgres",
     "password": null,
-    "database": "database_production",
+    "database": "linkedin_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
